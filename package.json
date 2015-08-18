@@ -1,0 +1,22 @@
+{
+  "name": "eggcelent",
+  "version": "1.0.0",
+  "description": "A one-page Yelp-like app with Reddit functionalities.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klcathy/Eggcelent.git"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "bugs": {
+    "url": "https://github.com/klcathy/Eggcelent/issues"
+  },
+  "homepage": "https://github.com/klcathy/Eggcelent#readme",
+  "author": "",
+  "license": "ISC"
+}
