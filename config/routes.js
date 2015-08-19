@@ -9,6 +9,13 @@ module.exports = function(app, express) {
     apiRouter.route('/restaurants')
         .get(restaurants.list)
         .post(restaurants.create);
+    apiRouter.route('/restaurants/:restaurantId')
+        .get(restaurants.show)
+        .put(restaurants.update)
+        .delete(restaurants.delete);
+
+    // Set restaurantId param
+    apiRouter.param('restaurantId', restaurants.restaurant);
 
     return apiRouter;
 };
