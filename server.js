@@ -37,54 +37,6 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/views/index.html'));
 });
 
-// RESTAURANTS ROUTE ====================================================
-//var Restaurant = db.define('Restaurant', {
-//        name         : {
-//            type     : Sequelize.STRING,
-//            allownull: false,
-//        },
-//        rating       : Sequelize.DECIMAL,
-//        priceRange   : Sequelize.INTEGER,
-//        cuisine      : Sequelize.STRING,
-//        category     : Sequelize.STRING,
-//        streetAddress: Sequelize.STRING,
-//        city         : Sequelize.STRING,
-//        state        : Sequelize.STRING,
-//        phone        : Sequelize.STRING,
-//        website      : Sequelize.STRING,
-//    }, {
-//        associate: function (models) {
-//            Restaurant.hasMany(models.Category);
-//        }
-//
-//    }
-//);
-
-//adminRouter.route('/restaurants')
-//    // create a restaurant
-//    .post(function (req, res) {
-//        Restaurant.create(req.body).then(function (restaurant) {
-//            return res.jsonp(restaurant);
-//        }).catch(function (err) {
-//            return res.render('error', {
-//                error : err,
-//                status: 400
-//            });
-//        });
-//    })
-//
-//    // list all restaurants
-//    .get(function (req, res) {
-//        Restaurant.findAll().then(function (restaurants) {
-//            return res.jsonp(restaurants);
-//        }).catch(function (err) {
-//            return res.render('error', {
-//                error : err,
-//                status: 500
-//            });
-//        });
-//    });
-
 // start server
 app.listen(config.port);
 console.log('Starting app on port ' + config.port);

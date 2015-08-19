@@ -7,6 +7,7 @@ module.exports = function(app, express) {
     var apiRouter = express.Router();
 
     apiRouter.route('/restaurants')
+        .get(restaurants.list)
         .post(restaurants.create);
 
     return apiRouter;

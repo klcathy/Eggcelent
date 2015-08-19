@@ -23,8 +23,9 @@ sequelize.authenticate().then(function (err) {
 // import model files and save model names
 var models = ['Restaurant'];
 
-models.forEach(function (model) {
-    var model      = sequelize.import('../app/models/' + model);
+models.forEach(function (file) {
+    var model      = sequelize.import('../app/models/' + file);
+    console.log('Importing ' + file);
     db[model.name] = model;
 });
 
