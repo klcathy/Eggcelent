@@ -27,6 +27,13 @@ fs.readdirSync('./app/models').forEach(function (file) {
     db[model.name] = model;
 });
 
+// invoke associations on each of the models
+Object.keys(db).forEach(function(modelName) {
+    if (db[modelName].options.hasOwnProperty('associate')) {
+        db[modelName].options.associate(db)
+    }
+});
+
 // sync all models that aren't already in database
 sequelize.sync();
 
