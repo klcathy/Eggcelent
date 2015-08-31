@@ -34,7 +34,7 @@ app.use('/app', apiRoutes);
 
 // MAIN CATCHALL ROUTE
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/views/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 // start server

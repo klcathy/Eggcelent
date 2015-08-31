@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
                 type: DataTypes.STRING,
                 allownull: false,
             },
-            rating: DataTypes.DECIMAL,
+            rating: DataTypes.DECIMAL(3,2),
             priceRange: DataTypes.INTEGER,
             cuisine: DataTypes.STRING,
             category: DataTypes.STRING,

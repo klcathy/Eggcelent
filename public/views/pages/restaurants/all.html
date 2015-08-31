@@ -1,0 +1,22 @@
+<h2>This is the restaurant page!</h2>
+
+<table class="table table-bordered table-striped" ng-show="restaurant.restaurants">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="res in restaurant.restaurants">
+            <td>{{res.name}}</td>
+            <td>{{res.city}}</td>
+            <td>{{res.streetAddress}}</td>
+            <td>{{res.rating}}</td>
+            <td>{{res.priceRange}}</td>
+        </tr>
+    </tbody>
+</table>
