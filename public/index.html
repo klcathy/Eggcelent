@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Eggcelent</title>
+        <title>Eggcellent</title>
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
 
         <base href="/">
 
-        <!-- CSS Bootstrap -->
+        <!-- CSS Libraries -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
 
         <!-- Angular CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
@@ -24,6 +27,19 @@
         <script src="js/controllers/restaurantCtrl.js"></script>
     </head>
     <body data-ng-app="eggcelentApp" data-ng-controller="mainController as main">
+        <div class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand"> Eggcellent</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/restaurants">Restaurants</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <main class="container">
             <!-- ANGULAR VIEWS -->
             <div ng-view></div>

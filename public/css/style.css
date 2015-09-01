@@ -1,0 +1,81 @@
+body {
+    background-color: transparent;
+}
+
+main {
+    padding-top: 30px;
+    background-color: rgba(255,255,255,0.85);
+}
+
+.navbar {
+    background: rgba(255,255,255,0.85);
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar a:hover {
+    color: rgba(13,6,3,0.8);
+}
+
+.navbar-nav a {
+    color: rgba(65,34,16,0.6);
+    font-size: 20px;
+}
+
+.navbar-brand {
+    color: rgba(65,34,16,0.6);
+    font-size: 25px;
+}
+
+.brunch-space {
+    /* Set rules to fill background */
+    background: url('../img/brunch.jpg');
+
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 52px;
+    left: 0;
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+    .brunch-space {
+        left: 50%;
+        margin-left: -512px;   /* 50% */
+    }
+}
+
+.search-bar {
+    color: white;
+}
+
+.jumbotron.search-bar {
+    background: transparent;
+}
+
+.form-group {
+    width: 42%;
+}
+
+.search-bar .form-control {
+    background-color: rgba(255,255,255,0.85);
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.search-bar .btn {
+    background-color: rgba(183,0,0,0.85);
+    border: none;
+    font-size: 20px;
+    color: white;
+    width: 15%;
+}
