@@ -7,6 +7,11 @@
     </h1>
 </div>
 
+<div class="alert alert-info alert-dismissible text-center" ng-show="restaurant.message">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{ restaurant.message }}
+</div>
+
 <table class="table table-bordered table-striped" ng-show="restaurant.restaurants">
     <thead>
         <tr>
@@ -15,6 +20,7 @@
             <th>Address</th>
             <th>Rating</th>
             <th>Price Range</th>
+            <th>Update</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +30,9 @@
             <td>{{res.streetAddress}}</td>
             <td>{{res.rating}}</td>
             <td>{{res.priceRange}}</td>
+            <td>
+                <a href="#" ng-click="restaurant.deleteRestaurant(res.id)" class="btn btn-primary">Delete</a>
+            </td>
         </tr>
     </tbody>
 </table>

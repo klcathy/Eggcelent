@@ -14,7 +14,7 @@ angular.module('app.routes', ['ngRoute'])
         })
 
         .when('/restaurants/create', {
-            templateUrl: 'views/pages/restaurants/new.html',
+            templateUrl: 'views/pages/restaurants/create.html',
             controller: 'restaurantController',
             controllerAs: 'restaurant'
         });

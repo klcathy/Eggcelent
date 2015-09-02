@@ -79,7 +79,7 @@ exports.delete = function(req, res) {
     var restaurant = req.restaurant;
 
     restaurant.destroy().then(function(){
-        return res.jsonp(restaurant);
+        return res.jsonp({ message: 'Restaurant deleted!'});
     }).catch(function(err){
         return res.render('error', {
             error: err,
