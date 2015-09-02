@@ -2,8 +2,8 @@ var db = require('../../config/sequelize');
 
 // Create a Restaurant
 exports.create = function(req, res) {
-    db.Restaurant.create(req.body).then(function (restaurant) {
-        return res.jsonp(restaurant);
+    db.Restaurant.create(req.body).then(function() {
+        return res.jsonp({ message: 'Restaurant created!'});
     }).catch(function (err) {
         return res.render('error', {
             error: err,

@@ -1,0 +1,81 @@
+<div class="page-header">
+    <h1>Create Restaurant</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="restaurant.newRestaurant()">
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Rating</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.rating">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Price Range</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.priceRange">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Cuisine</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.cuisine">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Category</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.category">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Address</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.streetAddress">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">City</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.city">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">State</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.state">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Phone</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.phone">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Website</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" ng-model="restaurant.resData.website">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+            <button type="submit" class="btn btn-block btn-success">Submit</button>
+        </div>
+    </div>
+</form>
+
+<div class="row" ng-show="restaurant.message">
+    <div class="col-sm-6 col-sm-offset-2">
+
+        <div class="alert alert-info text-center">
+            {{ restaurant.message }}
+        </div>
+
+    </div>
+</div>

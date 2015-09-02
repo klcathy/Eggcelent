@@ -1,1 +1,1 @@
-angular.module('eggcelentApp', ['app.routes', 'mainCtrl', 'restaurantCtrl', 'restaurantService']);
+angular.module('eggcelentApp', ['ngAnimate', 'app.routes', 'mainCtrl', 'restaurantCtrl', 'restaurantService']);

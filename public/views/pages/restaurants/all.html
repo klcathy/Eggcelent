@@ -1,4 +1,11 @@
-<h2>This is the restaurant page!</h2>
+<div class="page-header">
+    <h1>Displaying all restaurants
+        <a href="/restaurants/create" class="btn btn-default">
+            <span class="glyphicon glyphicon-plus"></span>
+            New Restaurant
+        </a>
+    </h1>
+</div>
 
 <table class="table table-bordered table-striped" ng-show="restaurant.restaurants">
     <thead>
@@ -7,7 +14,7 @@
             <th>City</th>
             <th>Address</th>
             <th>Rating</th>
-            <th>Price</th>
+            <th>Price Range</th>
         </tr>
     </thead>
     <tbody>

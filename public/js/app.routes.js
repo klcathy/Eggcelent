@@ -11,6 +11,12 @@ angular.module('app.routes', ['ngRoute'])
             templateUrl: 'views/pages/restaurants/all.html',
             controller: 'restaurantController',
             controllerAs: 'restaurant'
+        })
+
+        .when('/restaurants/create', {
+            templateUrl: 'views/pages/restaurants/new.html',
+            controller: 'restaurantController',
+            controllerAs: 'restaurant'
         });
 
         $locationProvider.html5Mode(true);

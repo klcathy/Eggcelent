@@ -3,27 +3,18 @@ body {
 }
 
 main {
-    padding-top: 30px;
     background-color: rgba(255,255,255,0.85);
 }
 
 .navbar {
-    background: rgba(255,255,255,0.85);
-    border-radius: 0px;
-    margin-bottom: 0px;
-}
-
-.navbar a:hover {
-    color: rgba(13,6,3,0.8);
+    border-color: #eeeeee;
 }
 
 .navbar-nav a {
-    color: rgba(65,34,16,0.6);
     font-size: 20px;
 }
 
 .navbar-brand {
-    color: rgba(65,34,16,0.6);
     font-size: 25px;
 }
 
@@ -39,7 +30,7 @@ main {
 
     /* Set up positioning */
     position: fixed;
-    top: 52px;
+    top: 60px;
     left: 0;
 
     -webkit-background-size: cover;
@@ -53,29 +44,31 @@ main {
     }
 }
 
-.search-bar {
-    color: white;
+.search-bar h1 {
+    color: rgba(255,255,255,0.90);
+    padding-bottom: 15px;
 }
 
 .jumbotron.search-bar {
     background: transparent;
 }
 
-.form-group {
-    width: 42%;
+.search-bar .form-group {
+    width: 100%;
 }
 
 .search-bar .form-control {
-    background-color: rgba(255,255,255,0.85);
+    background-color: rgba(255,255,255,0.90);
     height: 40px;
     width: 100%;
     font-size: 20px;
 }
 
 .search-bar .btn {
-    background-color: rgba(183,0,0,0.85);
-    border: none;
+    background-color: rgba(226,32,27,0.90);
+    border: 1px rgba(226,32,27,0.90);
     font-size: 20px;
-    color: white;
-    width: 15%;
+    height: 40px;
+    color: rgba(255,255,255,0.90);
+    width: 100%;
 }
