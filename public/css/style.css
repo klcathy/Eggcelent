@@ -72,3 +72,16 @@ main {
     color: rgba(255,255,255,0.90);
     width: 100%;
 }
+
+.well#rating {
+    background-color: #22b24c;
+    border-radius: 15px;
+    color: white;
+    padding: 3px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.well#rating > h4 {
+    color: white;
+}

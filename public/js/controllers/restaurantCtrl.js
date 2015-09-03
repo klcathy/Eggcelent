@@ -1,6 +1,6 @@
 angular.module('restaurantCtrl', [])
 
-.controller('restaurantController', function (Restaurants) {
+.controller('restaurantController', function ($routeParams, Restaurants) {
     var self = this;
 
     Restaurants.list()
@@ -27,4 +27,9 @@ angular.module('restaurantCtrl', [])
                     });
             });
     };
+
+    Restaurants.show($routeParams.restaurantId)
+        .success(function(data) {
+            self.restaurant = data;
+        });
 });

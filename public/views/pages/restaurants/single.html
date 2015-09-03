@@ -1,0 +1,51 @@
+<div class="page-header">
+    <div class="row">
+    <div class="col-lg-3">
+        <h1>{{ restaurant.restaurant.name }}</h1>
+    </div>
+
+    <div class="col-sm-1 col-sm-offset-7">
+        <div class="well text-center" id="rating">
+            <h4>{{ restaurant.restaurant.rating }}</h4>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="well">
+            <h3 class="text-muted">Phone Number</h3>
+            <h4><span class="glyphicon glyphicon-earphone"></span> {{ restaurant.restaurant.phone }}</h4>
+
+            <h3 class="text-muted">Website</h3>
+            <h4>{{ restaurant.restaurant.website }}</h4>
+
+            <h3 class="text-muted">Location</h3>
+            <h4>
+                <address>
+                    {{ restaurant.restaurant.streetAddress }}<br>
+                    {{ restaurant.restaurant.city }}, {{ restaurant.restaurant.state }}
+                    {{ restaurant.restaurant.zip }}<br>
+                </address>
+            </h4>
+            <h3 class="text-muted">Cuisines</h3>
+            <h4>{{ restaurant.restaurant.cuisine }}</h4>
+
+            <h3 class="text-muted">Good For</h3>
+            <h4>{{ restaurant.restaurant.category }}</h4>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="well">
+            <h3>Reviews</h3>
+        </div>
+    </div>
+
+    <div class="col-lg-3">
+        <div class="well">
+            <h3>Nearby Places</h3>
+        </div>
+    </div>
+</div>

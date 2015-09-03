@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
             streetAddress: DataTypes.STRING,
             city: DataTypes.STRING,
             state: DataTypes.STRING,
+            zip: DataTypes.STRING,
             phone: DataTypes.STRING,
             website: DataTypes.STRING,
         }, {

@@ -13,8 +13,14 @@ angular.module('app.routes', ['ngRoute'])
             controllerAs: 'restaurant'
         })
 
-        .when('/restaurants/create', {
-            templateUrl: 'views/pages/restaurants/create.html',
+        //.when('/restaurants/create', {
+        //    templateUrl: 'views/pages/restaurants/create.html',
+        //    controller: 'restaurantController',
+        //    controllerAs: 'restaurant'
+        //})
+
+        .when('/restaurants/:restaurantId', {
+            templateUrl: 'views/pages/restaurants/single.html',
             controller: 'restaurantController',
             controllerAs: 'restaurant'
         });

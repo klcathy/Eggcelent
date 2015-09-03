@@ -40,8 +40,8 @@ exports.restaurant = function(req, res, next, id) {
 
 // Show a Restaurant
 exports.show = function(req, res) {
-    // Sending down the article that was just preloaded by the articles.article function
-    // and saves article on the req object.
+    // Sending down the restaurant that was just preloaded by the restaurants.restaurant function
+    // and saves restaurant on the req object.
     return res.jsonp(req.restaurant);
 };
 
