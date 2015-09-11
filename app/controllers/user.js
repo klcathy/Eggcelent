@@ -10,15 +10,6 @@ exports.create = function(req, res) {
     user.save().then(function() {
         return res.jsonp({ message: 'User created!'});
     });
-
-    //db.User.create(req.body).then(function() {
-    //    return res.jsonp({message: 'User created!'});
-    //}).catch(function (err) {
-    //    return res.render('error', {
-    //        error: err,
-    //        status: 400
-    //    });
-    //});
 };
 
 exports.authenticate = function(req, res) {
@@ -46,5 +37,69 @@ exports.authenticate = function(req, res) {
         }
     }).catch(function(err) {
         throw err;
+    });
+};
+
+exports.me = function(req, res) {
+    res.send(req.decoded);
+};
+
+exports.list = function(req, res) {
+    db.User.findAll().then(function(users){
+        return res.jsonp(users);
+    }).catch(function(err) {
+        return res.render('error', {
+            error: err,
+            status: 500
+        });
+    });
+};
+
+exports.user = function(req, res, next, id) {
+    db.User.find({where: {id: id}}).then(function(user){
+        if(!user) {
+            return next(new Error('Failed to load user ' + id));
+        } else {
+            req.user = user;
+            return next();
+        }
+    }).catch(function(err){
+        return next(err);
+    });
+};
+
+exports.show = function(req, res) {
+    return res.jsonp(req.user);
+};
+
+// has bug where it hashes blank password
+exports.update = function(req, res) {
+    var user = req.user;
+    var new_password = user.updatePassword(req.user.password);
+
+    user.updateAttributes({
+        username: req.body.username,
+        email: req.body.email,
+        password: new_password
+    }).then(function(updated){
+        return res.jsonp(updated);
+    }).catch(function(err){
+        return res.render('error', {
+            error: err,
+            status: 500
+        });
+    });
+};
+
+exports.delete = function(req, res) {
+    var user = req.user;
+
+    user.destroy().then(function(){
+        return res.jsonp({ message: 'User deleted!'});
+    }).catch(function(err){
+        return res.render('error', {
+            error: err,
+            status: 500
+        });
     });
 };

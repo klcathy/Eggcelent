@@ -31,7 +31,6 @@ module.exports = function(sequelize, DataTypes) {
 
             setPassword: function(user, password) {
                 bcrypt.hash(password, null, null, function(err, hash) {
-                    console.log('Setting password');
                     user.password = hash;
                 });
             },
@@ -39,6 +38,11 @@ module.exports = function(sequelize, DataTypes) {
             // compare user supplied password with one stored in DB
             verifyPassword: function(password) {
                 return bcrypt.compareSync(password, this.password);
+            },
+
+            // update password
+            updatePassword: function(password) {
+                return bcrypt.hashSync(password);
             }
         }
     });
