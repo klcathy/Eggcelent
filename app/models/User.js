@@ -1,7 +1,7 @@
 /* User model
  User(id, email, password)
  */
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcrypt-nodejs');
 
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
@@ -27,10 +27,18 @@ module.exports = function(sequelize, DataTypes) {
             //        });
             //    });
             //},
+            // hash password before storing it
+
+            setPassword: function(user, password) {
+                bcrypt.hash(password, null, null, function(err, hash) {
+                    console.log('Setting password');
+                    user.password = hash;
+                });
+            },
 
             // compare user supplied password with one stored in DB
             verifyPassword: function(password) {
-                return bcrypt.compare(password, this.password);
+                return bcrypt.compareSync(password, this.password);
             }
         }
     });

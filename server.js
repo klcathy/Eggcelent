@@ -3,7 +3,6 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var morgan     = require('morgan');
-var db         = require('./config/sequelize');
 var config     = require('./config');
 var path       = require('path');
 
