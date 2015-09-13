@@ -44,7 +44,7 @@ exports.me = function(req, res) {
     res.send(req.decoded);
 };
 
-exports.list = function(req, res) {
+exports.all = function(req, res) {
     db.User.findAll().then(function(users){
         return res.jsonp(users);
     }).catch(function(err) {
@@ -68,7 +68,7 @@ exports.user = function(req, res, next, id) {
     });
 };
 
-exports.show = function(req, res) {
+exports.get = function(req, res) {
     return res.jsonp(req.user);
 };
 
@@ -101,5 +101,24 @@ exports.delete = function(req, res) {
             error: err,
             status: 500
         });
+    });
+};
+
+exports.sample = function(req, res) {
+    db.User.find({where: {username: 'chris' }}).then(function(user){
+        if(!user) {
+            var sampleUser = db.User.build({
+                    username: 'chris',
+                    email: 'chris@gmail.com',
+                    password: 'supersecret'
+                })
+            sampleUser.setPassword(sampleUser, 'supersecret');
+            sampleUser.save();
+        } else {
+            // if there is a chris, update his password
+            user.updateAttributes({
+                password: user.updatePassword('supersecret')
+            });
+        }
     });
 };

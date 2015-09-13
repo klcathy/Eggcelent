@@ -7,6 +7,12 @@ angular.module('app.routes', ['ngRoute'])
             templateUrl: 'views/pages/home.html'
         })
 
+        .when('/login', {
+            templateUrl: 'views/pages/login.html',
+            controller: 'mainController',
+            controllerAs: 'login'
+        })
+
         .when('/restaurants', {
             templateUrl: 'views/pages/restaurants/all.html',
             controller: 'restaurantController',

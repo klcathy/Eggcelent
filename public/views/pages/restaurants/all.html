@@ -12,7 +12,7 @@
     {{ restaurant.message }}
 </div>
 
-<table class="table table-bordered table-striped" ng-show="restaurant.restaurants">
+<table class="table table-bordered table-striped" ng-init="restaurant.list()">
     <thead>
         <tr>
             <th>Name</th>

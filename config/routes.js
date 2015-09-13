@@ -10,6 +10,10 @@ module.exports = function(app, express) {
 
     var apiRouter = express.Router();
 
+    // create sample user
+    apiRouter.route('/sample')
+        .post(users.sample);
+
     // authentication routes
     apiRouter.route('/authenticate')
         .post(users.authenticate);
@@ -45,10 +49,10 @@ module.exports = function(app, express) {
 
     // user routes
     apiRouter.route('/users')
-        .get(users.list)
+        .get(users.all)
         .post(users.create);
     apiRouter.route('/users/:userId')
-        .get(users.show)
+        .get(users.get)
         .put(users.update)
         .delete(users.delete);
 

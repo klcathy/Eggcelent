@@ -14,6 +14,7 @@ exports.create = function(req, res) {
 
 // List of Restaurants
 exports.list = function(req, res) {
+    //console.log(req)
     db.Restaurant.findAll().then(function(restaurants){
         return res.jsonp(restaurants);
     }).catch(function(err) {

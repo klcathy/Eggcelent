@@ -1,0 +1,35 @@
+<div class="jumbotron">
+    <h1>Login</h1>
+
+    <div class="alert alert-info">
+        <p>Test Info</p>
+        <p>Username: chris</p>
+        <p>Password: supersecret</p>
+        <p><a href="#" ng-click="login.createSample()" class="btn btn-sm btn-primary">Create Sample User</a></p>
+    </div>
+
+    <form class="form-horizontal" ng-submit="login.doLogin()">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" ng-model="login.loginData.username">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" ng-model="login.loginData.password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Log in</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="alert alert-danger" ng-if="login.error">
+        {{ login.error }}
+    </div>
+</div>
+
