@@ -6,7 +6,6 @@ var secretToken = 'ooohsupersecrettoken';
 
 exports.create = function(req, res) {
     var user = db.User.build(req.body);
-    user.setPassword(user, req.body.password);
     user.save().then(function() {
         return res.jsonp({ message: 'User created!'});
     });
@@ -18,7 +17,11 @@ exports.authenticate = function(req, res) {
             return res.jsonp({ message: 'Authentication failed. User not found.'});
         else if (user) {
             // check if password matches
-            var validPassword = user.verifyPassword(req.body.password);
+            var validPassword = function() {
+                if (req.body.password == user.password)
+                    return true;
+                else return false;
+            }
 
             if (!validPassword) {
                 res.jsonp({ message: 'Authentication failed. Wrong password.'});
@@ -32,7 +35,7 @@ exports.authenticate = function(req, res) {
                 }, secretToken, {
                 expiresInMinutes: 1440 // expires in 24 hours
             });
-            res.json({ message: 'Authentication success.', token: token});
+            res.json({ success: true, message: 'Authentication success.', token: token});
             }
         }
     }).catch(function(err) {
@@ -75,12 +78,11 @@ exports.get = function(req, res) {
 // has bug where it hashes blank password
 exports.update = function(req, res) {
     var user = req.user;
-    var new_password = user.updatePassword(req.user.password);
 
     user.updateAttributes({
         username: req.body.username,
         email: req.body.email,
-        password: new_password
+        password: req.body.password
     }).then(function(updated){
         return res.jsonp(updated);
     }).catch(function(err){
@@ -112,12 +114,11 @@ exports.sample = function(req, res) {
                     email: 'chris@gmail.com',
                     password: 'supersecret'
                 })
-            sampleUser.setPassword(sampleUser, 'supersecret');
             sampleUser.save();
         } else {
             // if there is a chris, update his password
             user.updateAttributes({
-                password: user.updatePassword('supersecret')
+                password: 'supersecret'
             });
         }
     });

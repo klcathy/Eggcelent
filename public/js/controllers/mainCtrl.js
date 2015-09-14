@@ -31,11 +31,13 @@ angular.module('mainCtrl', [])
                 .success(function(data) {
                     self.processing = false;
 
-                    // if user successfully logs in, redirect to users page
-                    if (data.success)
-                        $location.path('/users');
-                    else
+                    // if user successfully logs in, redirect to restaurants page
+                    if (data.success) {
+                        $location.path('/restaurants');
+                    }
+                    else {
                         self.error = data.message;
+                    }
                 });
         };
 
